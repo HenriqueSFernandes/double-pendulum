@@ -29,7 +29,7 @@ def main():
     pygame.init()
     
     SIZE = (600, 600)
-    PATH_TO_LOGO = "files\Pulse_Rickyyy.png"
+    #PATH_TO_LOGO = "files\Pulse_Rickyyy.png"
     CAPTION = "Double Pendulum"
     
     pos1 = []
@@ -48,8 +48,8 @@ def main():
     resistance = True       #True: há dissipação de energia
     resistanceperc = 1     #percentagem de dissipação
     
-    LOGO = pygame.image.load(PATH_TO_LOGO)
-    pygame.display.set_icon(LOGO)
+    #LOGO = pygame.image.load(PATH_TO_LOGO)
+    #pygame.display.set_icon(LOGO)
     screen = pygame.display.set_mode(SIZE)
     pygame.display.set_caption(CAPTION)
     clock = pygame.time.Clock()
