@@ -1,11 +1,7 @@
-from math import sin, cos, sqrt, pi
-import pygame
+from math import cos, pi, sin, sqrt
 
-from pygame.locals import (
-    K_SPACE,
-    K_ESCAPE,
-    KEYDOWN,
-)
+import pygame
+from pygame.locals import K_ESCAPE, K_SPACE, KEYDOWN
 
 
 def translate(coords):
@@ -63,21 +59,21 @@ def main():
                 if event.key == K_ESCAPE:
                     running = False
                 if event.key == K_SPACE:
-                    if pause == False:
+                    if not pause:
                         pause = True
                     else:
                         pause = False
             if event.type == pygame.QUIT:
                 running = False
 
-        while pause == True:
+        while pause:
             for event in pygame.event.get():
                 if event.type == KEYDOWN:
                     if event.key == K_ESCAPE:
                         pause = False
                         running = False
                     if event.key == K_SPACE:
-                        if pause == False:
+                        if not pause:
                             pause = True
                         else:
                             pause = False
@@ -89,12 +85,12 @@ def main():
         num13 = -2 * sin(ang1 - ang2) * m2
         num14 = velocidade2 * velocidade2 * r2 + velocidade1 * velocidade1 * r1 * cos(
             ang1 - ang2
-        )
+        )  # noqa
         den11 = r1 * (2 * m1 + m2 - m2 * cos(2 * ang1 - 2 * ang2))
 
         aceleracao1 = (num11 + num12 + num13 * num14) / den11
         velocidade1 += aceleracao1
-        if resistance == True:
+        if resistance:
             velocidade1 *= (100 - resistanceperc) * 0.01
         ang1 += velocidade1
 
@@ -106,7 +102,7 @@ def main():
 
         aceleracao2 = (num21 * (num22 + num23 + num24)) / den21
         velocidade2 += aceleracao2
-        if resistance == True:
+        if resistance:
             velocidade2 *= (100 - resistanceperc) * 0.01
         ang2 += velocidade2
 
