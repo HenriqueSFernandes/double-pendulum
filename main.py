@@ -5,13 +5,13 @@ from pygame.locals import K_ESCAPE, K_SPACE, KEYDOWN
 
 
 def translate(coords):
-    return (coords[0] + 300, coords[1] + 150)
+    return coords[0] + 300, coords[1] + 150
 
 
 def coords(ang, r, origin):
     x = origin[0] + r * sin(ang)
     y = origin[1] + r * cos(ang)
-    return (x, y)
+    return x, y
 
 
 def main():
