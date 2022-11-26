@@ -18,6 +18,7 @@ def main():
 
     WHITE = (255, 255, 255)
     BLACK = (0, 0, 0)
+    GREY = (77, 77, 77)
     FPS = 60
     pygame.init()
 
@@ -38,7 +39,7 @@ def main():
     aceleracao2 = 0  # aceleracao inicial da bola 2
     velocidade1 = 0  # velocidade inicial da bola 1
     velocidade2 = 0  # velocidade inicial da bola 2
-    resistance = True  # True: há dissipação de energia
+    resistance = False  # True: há dissipação de energia
     resistanceperc = 1  # percentagem de dissipação
 
     # LOGO = pygame.image.load(PATH_TO_LOGO)
@@ -114,7 +115,7 @@ def main():
         # for coord in pos1:
         #     pygame.draw.circle(screen, BLACK, translate(coord), 2)
         for coord in pos2:
-            pygame.draw.circle(screen, BLACK, translate(coord), 2)
+            pygame.draw.circle(screen, GREY, translate(coord), 2)
         pygame.draw.line(screen, BLACK, translate((0, 0)), translate(bola1), 2)
         pygame.draw.circle(screen, BLACK, translate(bola1), sqrt(m1 / pi))
         pygame.draw.line(screen, BLACK, translate(bola1), translate(bola2), 2)
